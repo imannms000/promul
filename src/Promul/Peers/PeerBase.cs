@@ -47,6 +47,11 @@ namespace Promul
         public readonly int Id;
 
         /// <summary>
+        ///     the Join Code used by this peer.
+        /// </summary>
+        public string JoinCode; // temporrary solution
+
+        /// <summary>
         ///     The <see cref="PromulManager" /> instance responsible for this peer.
         /// </summary>
         public readonly PromulManager PromulManager;
