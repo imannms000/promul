@@ -27,12 +27,12 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Promul.Runtime.Unity",
+              "Title": "Promul.Runtime.Unity.csproj",
               "DocumentMoniker": "D:\\Dev\\Git\\jacksonrakena\\promul\\src\\Promul.Runtime.Unity\\Promul.Runtime.Unity.csproj",
               "RelativeDocumentMoniker": "src\\Promul.Runtime.Unity\\Promul.Runtime.Unity.csproj",
               "ToolTip": "D:\\Dev\\Git\\jacksonrakena\\promul\\src\\Promul.Runtime.Unity\\Promul.Runtime.Unity.csproj",
               "RelativeToolTip": "src\\Promul.Runtime.Unity\\Promul.Runtime.Unity.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAzAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-02-13T13:11:58.055Z",
               "EditorCaption": ""
@@ -47,8 +47,7 @@
               "RelativeToolTip": "src\\Promul.Server~\\Relay\\Sessions\\RelaySession.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T11:42:30.624Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-13T11:42:30.624Z"
             },
             {
               "$type": "Document",

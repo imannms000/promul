@@ -7,6 +7,11 @@ namespace Promul.Relay.Protocol
     public struct RelayControlMessage
     {
         /// <summary>
+        ///     Session Join Code.
+        /// </summary>
+        public string JoinCode { get; set; }
+
+        /// <summary>
         ///     The type of this message.
         /// </summary>
         public RelayControlMessageType Type { get; set; }
