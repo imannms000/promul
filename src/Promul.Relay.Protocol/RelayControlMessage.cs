@@ -6,10 +6,6 @@ namespace Promul.Relay.Protocol
     /// </summary>
     public struct RelayControlMessage
     {
-        /// <summary>
-        ///     Session Join Code.
-        /// </summary>
-        public string JoinCode { get; set; }
 
         /// <summary>
         ///     The type of this message.
@@ -22,6 +18,11 @@ namespace Promul.Relay.Protocol
         ///     Otherwise, this field indicates the desired recipient of this message.
         /// </summary>
         public ulong AuthorClientId { get; set; }
+
+        /// <summary>
+        ///     Session Join Code.
+        /// </summary>
+        public string JoinCode { get; set; }
 
         /// <summary>
         ///     The data enclosed in this message.
