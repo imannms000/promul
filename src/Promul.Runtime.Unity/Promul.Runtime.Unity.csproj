@@ -12,10 +12,10 @@
     </PropertyGroup>
     <ItemGroup>
         <Reference Include="UnityEngine.CoreModule">
-            <HintPath>C:\Program Files\Unity\Hub\Editor\2023.1.19f1\Editor\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll</HintPath>
+            <HintPath>C:\Program Files\Unity Hub\Editor\Unity 6000.0.28f1\Editor\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll</HintPath>
         </Reference>
         <Reference Include="Unity.Netcode.Runtime">
-            <HintPath>D:\Code\Ace In The Hole\Library\ScriptAssemblies\Unity.Netcode.Runtime.dll</HintPath>
+            <HintPath>D:\Dev\Library\ScriptAssemblies\Unity.Netcode.Runtime.dll</HintPath>
         </Reference>
     </ItemGroup>
     <ItemGroup>

@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Dev\\Git\\jacksonrakena\\promul\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{29457397-4CEF-4E36-92C7-F3E1101CDBA7}|src\\Promul.Runtime.Unity\\Promul.Runtime.Unity.csproj|d:\\dev\\git\\jacksonrakena\\promul\\src\\promul.runtime.unity\\promul.runtime.unity.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{29457397-4CEF-4E36-92C7-F3E1101CDBA7}|src\\Promul.Runtime.Unity\\Promul.Runtime.Unity.csproj|solutionrelative:src\\promul.runtime.unity\\promul.runtime.unity.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDB23D95-CCE1-4B0A-A5E0-B25383D6F647}|src\\Promul.Server~\\Promul.Relay.Server.csproj|d:\\dev\\git\\jacksonrakena\\promul\\src\\promul.server~\\relay\\sessions\\relaysession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EDB23D95-CCE1-4B0A-A5E0-B25383D6F647}|src\\Promul.Server~\\Promul.Relay.Server.csproj|solutionrelative:src\\promul.server~\\relay\\sessions\\relaysession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{009A3A68-30A0-44EB-9B42-8FCB6BD89195}|src\\Promul\\Promul.csproj|d:\\dev\\git\\jacksonrakena\\promul\\src\\promul\\promul.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{009A3A68-30A0-44EB-9B42-8FCB6BD89195}|src\\Promul\\Promul.csproj|solutionrelative:src\\promul\\promul.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Promul.Runtime.Unity",
+              "DocumentMoniker": "D:\\Dev\\Git\\jacksonrakena\\promul\\src\\Promul.Runtime.Unity\\Promul.Runtime.Unity.csproj",
+              "RelativeDocumentMoniker": "src\\Promul.Runtime.Unity\\Promul.Runtime.Unity.csproj",
+              "ToolTip": "D:\\Dev\\Git\\jacksonrakena\\promul\\src\\Promul.Runtime.Unity\\Promul.Runtime.Unity.csproj",
+              "RelativeToolTip": "src\\Promul.Runtime.Unity\\Promul.Runtime.Unity.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-02-13T13:11:58.055Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RelaySession.cs",
+              "DocumentMoniker": "D:\\Dev\\Git\\jacksonrakena\\promul\\src\\Promul.Server~\\Relay\\Sessions\\RelaySession.cs",
+              "RelativeDocumentMoniker": "src\\Promul.Server~\\Relay\\Sessions\\RelaySession.cs",
+              "ToolTip": "D:\\Dev\\Git\\jacksonrakena\\promul\\src\\Promul.Server~\\Relay\\Sessions\\RelaySession.cs",
+              "RelativeToolTip": "src\\Promul.Server~\\Relay\\Sessions\\RelaySession.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-13T11:42:30.624Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Promul.csproj",
+              "DocumentMoniker": "D:\\Dev\\Git\\jacksonrakena\\promul\\src\\Promul\\Promul.csproj",
+              "RelativeDocumentMoniker": "src\\Promul\\Promul.csproj",
+              "ToolTip": "D:\\Dev\\Git\\jacksonrakena\\promul\\src\\Promul\\Promul.csproj",
+              "RelativeToolTip": "src\\Promul\\Promul.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-01-19T07:18:16.802Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
