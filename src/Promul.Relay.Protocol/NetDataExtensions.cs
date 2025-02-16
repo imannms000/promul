@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 namespace Promul.Relay.Protocol
 {
     public static class NetDataExtensions
@@ -16,6 +18,7 @@ namespace Promul.Relay.Protocol
 
         public static void Write(this CompositeWriter writer, RelayControlMessage rcm)
         {
+            Debug.Write($"[netcode] NetDataExtensions # Write # rcm.JoinCode: {rcm.JoinCode}");
             writer.Write((byte)rcm.Type);
             writer.Write(rcm.AuthorClientId);
             writer.Write(System.Text.Encoding.UTF8.GetBytes(rcm.JoinCode ?? string.Empty));
