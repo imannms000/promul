@@ -8,6 +8,7 @@ namespace Promul.Relay.Protocol
             {
                 Type = (RelayControlMessageType)reader.ReadByte(),
                 AuthorClientId = reader.ReadUInt64(),
+                JoinCode = reader.ReadString(),
                 Data = reader.ReadRemainingBytes()
             };
             return rcm;
@@ -17,6 +18,7 @@ namespace Promul.Relay.Protocol
         {
             writer.Write((byte)rcm.Type);
             writer.Write(rcm.AuthorClientId);
+            writer.Write(rcm.JoinCode);
             writer.Write(rcm.Data);
         }
     }
