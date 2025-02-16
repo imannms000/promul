@@ -469,6 +469,8 @@ namespace Promul
             if (_connectionRequests.ContainsKey(target))
                 return null;
 
+            _lastPeerId = 0;
+
             byte connectionNumber = 0;
             if (_peers.TryGetValue(target, out var peer))
             {
