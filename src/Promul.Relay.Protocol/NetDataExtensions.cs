@@ -18,7 +18,7 @@ namespace Promul.Relay.Protocol
         {
             writer.Write((byte)rcm.Type);
             writer.Write(rcm.AuthorClientId);
-            writer.Write(rcm.JoinCode ?? string.Empty);
+            writer.Write(System.Text.Encoding.UTF8.GetBytes(rcm.JoinCode ?? string.Empty));
             writer.Write(rcm.Data);
         }
     }
