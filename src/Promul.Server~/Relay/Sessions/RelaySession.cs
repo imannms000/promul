@@ -22,7 +22,7 @@ public class RelaySession
 
     public async Task OnReceive(PeerBase from, RelayControlMessage message, DeliveryMethod method)
     {
-        if (!_connections.TryGetValue((int) message.AuthorClientId, out var dest))
+        if (!_connections.TryGetValue((int)message.AuthorClientId, out var dest))
         {
             LogInformation($"{from.Id} tried to send information to {message.AuthorClientId}, but {message.AuthorClientId} is not connected to the relay.");
             return;
@@ -61,7 +61,6 @@ public class RelaySession
         writer.Write(message);
         await to.SendAsync(writer, deliveryMethod: method);
     }
-
     public async Task OnJoinAsync(PeerBase peer)
     {
         _connections[peer.Id] = peer;
@@ -73,18 +72,20 @@ public class RelaySession
         else
         {
             LogInformation($"{peer.Id} has joined");
-            
+
+            // Notify the Host About the New Peer
             await SendAsync(HostPeer!, new RelayControlMessage()
             {
                 Type = RelayControlMessageType.Connected,
-                AuthorClientId = (ulong) peer.Id,
+                AuthorClientId = (ulong)peer.Id,
                 Data = Array.Empty<byte>()
             }, DeliveryMethod.ReliableOrdered);
-            
+
+            // Notify the New Peer About the Host
             await SendAsync(peer, new RelayControlMessage
             {
                 Type = RelayControlMessageType.Connected,
-                AuthorClientId = (ulong) host!,
+                AuthorClientId = (ulong)host!,
                 Data = Array.Empty<byte>()
             }, DeliveryMethod.ReliableOrdered);
         }
@@ -108,10 +109,10 @@ public class RelaySession
                 await SendAsync(HostPeer!, new RelayControlMessage
                 {
                     Type = RelayControlMessageType.Disconnected,
-                    AuthorClientId = (ulong) peer.Id,
+                    AuthorClientId = (ulong)peer.Id,
                     Data = Array.Empty<byte>()
                 }, DeliveryMethod.ReliableOrdered);
-            }   
+            }
         }
     }
 
@@ -123,7 +124,7 @@ public class RelaySession
         }
         _connections.Clear();
     }
-    
+
     private void LogInformation(string message)
     {
         _logger.LogInformation("[{}] {}", this, message);

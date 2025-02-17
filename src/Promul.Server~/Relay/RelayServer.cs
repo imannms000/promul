@@ -44,7 +44,7 @@ public class RelayServer
 
     public async Task DestroySession(RelaySession session)
     {
-        foreach (var peer in session.Peers) _sessionsByPeer.Remove(peer.Id);
+        //foreach (var peer in session.Peers) _sessionsByPeer.Remove(peer.Id);
 
         await session.DisconnectAll();
         _sessionsByCode.Remove(session.JoinCode);
@@ -54,9 +54,13 @@ public class RelayServer
         DeliveryMethod deliveryMethod)
     {
         var packet = reader.ReadRelayControlMessage();
+        string joinCode = System.Text.Encoding.UTF8.GetString(packet.JoinCode);
+
+        //_logger.LogInformation($"OnNetworkReceive # JoinCode: {joinCode}");
 
         const string format = "Disconnecting {} ({}) because {}";
-        if (!_sessionsByPeer.TryGetValue(peer.Id, out var session))
+        if (!_sessionsByCode.TryGetValue(joinCode, out var session))
+        //if (!_sessionsByPeer.TryGetValue(peer.Id, out var session))
         {
             _logger.LogInformation(format, peer.Id, peer.EndPoint, "because they are not attached to a session.");
             await PromulManager.DisconnectPeerAsync(peer);
@@ -65,7 +69,6 @@ public class RelayServer
 
         await session.OnReceive(peer, packet, deliveryMethod);
     }
-
     public async ValueTask OnConnectionRequest(ConnectionRequest request)
     {
         var joinCode = request.Data.ReadString();
@@ -80,8 +83,22 @@ public class RelayServer
         }
 
         var peer = await request.AcceptAsync();
+
+        peer.JoinCode = joinCode;
+
+        // Assign ID 0 to the host (server)
+        if (keyedSession.HostPeer == null) // First peer is the host
+        {
+            peer.Id = 0; // Host (server) always has ID 0
+        }
+        else
+        {
+            // Assign IDs starting from 1 to clients
+            peer.Id = keyedSession.Peers.Count(); // Clients start from 1
+        }
+
         await keyedSession.OnJoinAsync(peer);
-        _sessionsByPeer[peer.Id] = keyedSession;
+        //_sessionsByPeer[peer.Id] = keyedSession;
     }
 
     public async ValueTask OnPeerConnected(PeerBase peer)
@@ -93,10 +110,11 @@ public class RelayServer
     {
         _logger.LogInformation(
             $"Peer {peer.Id} disconnected: {disconnectInfo.Reason} {disconnectInfo.SocketErrorCode}");
-        if (_sessionsByPeer.TryGetValue(peer.Id, out var session))
+        //if (_sessionsByPeer.TryGetValue(peer.Id, out var session))
+        if (_sessionsByCode.TryGetValue(peer.JoinCode, out var session))
         {
             await session.OnLeave(peer);
-            _sessionsByPeer.Remove(peer.Id);
+            //_sessionsByPeer.Remove(peer.Id);
         }
     }
 }

@@ -21,6 +21,8 @@ namespace Promul.Runtime.Unity
         public ushort Port = 7777;
         [Tooltip("The address of the relay server.")]
         public string Address = "127.0.0.1";
+        [Tooltip("The join code of the relay server.")]
+        public string JoinCode = "TEST";
 
         [Tooltip("Interval between ping packets used for detecting latency and checking connection, in seconds")]
         public float PingInterval = 1f;
@@ -79,6 +81,7 @@ namespace Promul.Runtime.Unity
                 {
                     Type = RelayControlMessageType.Data,
                     AuthorClientId = clientId,
+                    JoinCode = System.Text.Encoding.UTF8.GetBytes(JoinCode),
                     Data = sd
                 }, qos);
             });
@@ -150,18 +153,18 @@ namespace Promul.Runtime.Unity
         public override bool StartClient()
         {
             m_HostType = HostType.Client;
-            return ConnectToRelayServer("TEST");
+            return ConnectToRelayServer(JoinCode);
         }
 
         public override bool StartServer()
         {
             m_HostType = HostType.Server;
-            return ConnectToRelayServer("TEST");
+            return ConnectToRelayServer(JoinCode);
         }
 
         public override void DisconnectRemoteClient(ulong clientId)
         {
-            SendControl(new RelayControlMessage {Type = RelayControlMessageType.KickFromRelay, AuthorClientId = clientId, Data = Array.Empty<byte>() }, NetworkDelivery.Reliable);
+            SendControl(new RelayControlMessage { Type = RelayControlMessageType.KickFromRelay, AuthorClientId = clientId, JoinCode = System.Text.Encoding.UTF8.GetBytes(JoinCode), Data = Array.Empty<byte>() }, NetworkDelivery.Reliable);
         }
 
         public override void DisconnectLocalClient()

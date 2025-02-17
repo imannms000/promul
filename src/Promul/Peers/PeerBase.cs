@@ -44,12 +44,13 @@ namespace Promul
         /// <summary>
         ///     The local ID of this peer.
         /// </summary>
-        public readonly int Id;
+        //public readonly int Id;
+        public int Id;
 
         /// <summary>
-        ///     the Join Code used by this peer.
+        ///     The Join Code used by this peer.
         /// </summary>
-        public string JoinCode; // temporrary solution
+        public string JoinCode;
 
         /// <summary>
         ///     The <see cref="PromulManager" /> instance responsible for this peer.
