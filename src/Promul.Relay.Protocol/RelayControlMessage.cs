@@ -22,7 +22,7 @@ namespace Promul.Relay.Protocol
         /// <summary>
         ///     Session Join Code.
         /// </summary>
-        public string JoinCode { get; set; }
+        public byte[] JoinCode { get; set; }
 
         /// <summary>
         ///     The data enclosed in this message.
